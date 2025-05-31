@@ -50,99 +50,65 @@ scene.add(dirLight);
 // 카메라 이동/회전 제어
 let move = { left: false, right: false, up: false, down: false, yawLeft: false, yawRight: false, upY: false, downY: false };
 function onKeyDown(e) {
-  const key = e.key;
-  switch (key) {
+  switch (e.code) {
     case 'ArrowLeft':
-    case 'a':
-    case 'A':
-    case 'ㅁ': // 한글 자판에서 a 위치
+    case 'KeyA':
       move.left = true;
       break;
     case 'ArrowRight':
-    case 'd':
-    case 'D':
-    case 'ㅇ': // 한글 자판에서 d 위치
+    case 'KeyD':
       move.right = true;
       break;
     case 'ArrowUp':
-    case 'w':
-    case 'W':
-    case 'ㅈ': // 한글 자판에서 w 위치
+    case 'KeyW':
       move.up = true;
       break;
     case 'ArrowDown':
-    case 's':
-    case 'S':
-    case 'ㄴ': // 한글 자판에서 s 위치
+    case 'KeyS':
       move.down = true;
       break;
-    case 'q':
-    case 'Q':
-    case 'ㅂ':
+    case 'KeyQ':
       move.yawLeft = true;
       break;
-    case 'e':
-    case 'E':
-    case 'ㄷ':
+    case 'KeyE':
       move.yawRight = true;
       break;
-    case 'r':
-    case 'R':
-    case 'ㄱ':
+    case 'KeyR':
       move.upY = true;
       break;
-    case 'f':
-    case 'F':
-    case 'ㄹ':
+    case 'KeyF':
       move.downY = true;
       break;
   }
 }
 function onKeyUp(e) {
-  const key = e.key;
-  switch (key) {
+  switch (e.code) {
     case 'ArrowLeft':
-    case 'a':
-    case 'A':
-    case 'ㅁ':
+    case 'KeyA':
       move.left = false;
       break;
     case 'ArrowRight':
-    case 'd':
-    case 'D':
-    case 'ㅇ':
+    case 'KeyD':
       move.right = false;
       break;
     case 'ArrowUp':
-    case 'w':
-    case 'W':
-    case 'ㅈ':
+    case 'KeyW':
       move.up = false;
       break;
     case 'ArrowDown':
-    case 's':
-    case 'S':
-    case 'ㄴ':
+    case 'KeyS':
       move.down = false;
       break;
-    case 'q':
-    case 'Q':
-    case 'ㅂ':
+    case 'KeyQ':
       move.yawLeft = false;
       break;
-    case 'e':
-    case 'E':
-    case 'ㄷ':
+    case 'KeyE':
       move.yawRight = false;
       break;
-    case 'r':
-    case 'R':
-    case 'ㄱ':
+    case 'KeyR':
       move.upY = false;
       break;
-    case 'f':
-    case 'F':
-    case 'ㄹ':
+    case 'KeyF':
       move.downY = false;
       break;
   }
