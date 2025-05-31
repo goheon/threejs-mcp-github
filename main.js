@@ -17,18 +17,28 @@ const floor = new THREE.Mesh(floorGeometry, floorMaterial);
 floor.rotation.x = -Math.PI / 2;
 scene.add(floor);
 
-// 사과(구체 + 잎)
+// 사과 본체(구체)
 const appleGeometry = new THREE.SphereGeometry(0.5, 32, 32);
 const appleMaterial = new THREE.MeshStandardMaterial({ color: 0xff2222 });
 const apple = new THREE.Mesh(appleGeometry, appleMaterial);
 apple.position.set(0, 0.5, 0);
 scene.add(apple);
-// 사과 잎
-const leafGeometry = new THREE.SphereGeometry(0.15, 16, 16);
+
+// 사과 잎 (더 자연스러운 위치와 크기)
+const leafGeometry = new THREE.SphereGeometry(0.13, 16, 16);
 const leafMaterial = new THREE.MeshStandardMaterial({ color: 0x22bb22 });
 const leaf = new THREE.Mesh(leafGeometry, leafMaterial);
-leaf.position.set(0.25, 0.85, 0);
+leaf.position.set(0.18, 0.65, -0.18);
+leaf.rotation.z = Math.PI / 8;
 apple.add(leaf);
+
+// 사과 꼭지(갈색 원기둥)
+const stemGeometry = new THREE.CylinderGeometry(0.04, 0.06, 0.22, 12);
+const stemMaterial = new THREE.MeshStandardMaterial({ color: 0x8B5A2B });
+const stem = new THREE.Mesh(stemGeometry, stemMaterial);
+stem.position.set(0, 0.77, 0);
+stem.rotation.x = Math.PI / 8;
+apple.add(stem);
 
 // 조명
 const ambientLight = new THREE.AmbientLight(0xffffff, 0.7);
