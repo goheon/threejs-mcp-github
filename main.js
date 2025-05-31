@@ -50,26 +50,68 @@ scene.add(dirLight);
 // 카메라 이동/회전 제어
 let move = { left: false, right: false, up: false, down: false, yawLeft: false, yawRight: false, upY: false, downY: false };
 function onKeyDown(e) {
-  const key = e.key.toLowerCase();
-  if (key === 'arrowleft' || key === 'a') move.left = true;
-  if (key === 'arrowright' || key === 'd') move.right = true;
-  if (key === 'arrowup' || key === 'w') move.up = true;
-  if (key === 'arrowdown' || key === 's') move.down = true;
-  if (key === 'q') move.yawLeft = true;
-  if (key === 'e') move.yawRight = true;
-  if (key === 'r') move.upY = true;
-  if (key === 'f') move.downY = true;
+  switch (e.code) {
+    case 'ArrowLeft':
+    case 'KeyA':
+      move.left = true;
+      break;
+    case 'ArrowRight':
+    case 'KeyD':
+      move.right = true;
+      break;
+    case 'ArrowUp':
+    case 'KeyW':
+      move.up = true;
+      break;
+    case 'ArrowDown':
+    case 'KeyS':
+      move.down = true;
+      break;
+    case 'KeyQ':
+      move.yawLeft = true;
+      break;
+    case 'KeyE':
+      move.yawRight = true;
+      break;
+    case 'KeyR':
+      move.upY = true;
+      break;
+    case 'KeyF':
+      move.downY = true;
+      break;
+  }
 }
 function onKeyUp(e) {
-  const key = e.key.toLowerCase();
-  if (key === 'arrowleft' || key === 'a') move.left = false;
-  if (key === 'arrowright' || key === 'd') move.right = false;
-  if (key === 'arrowup' || key === 'w') move.up = false;
-  if (key === 'arrowdown' || key === 's') move.down = false;
-  if (key === 'q') move.yawLeft = false;
-  if (key === 'e') move.yawRight = false;
-  if (key === 'r') move.upY = false;
-  if (key === 'f') move.downY = false;
+  switch (e.code) {
+    case 'ArrowLeft':
+    case 'KeyA':
+      move.left = false;
+      break;
+    case 'ArrowRight':
+    case 'KeyD':
+      move.right = false;
+      break;
+    case 'ArrowUp':
+    case 'KeyW':
+      move.up = false;
+      break;
+    case 'ArrowDown':
+    case 'KeyS':
+      move.down = false;
+      break;
+    case 'KeyQ':
+      move.yawLeft = false;
+      break;
+    case 'KeyE':
+      move.yawRight = false;
+      break;
+    case 'KeyR':
+      move.upY = false;
+      break;
+    case 'KeyF':
+      move.downY = false;
+      break;
+  }
 }
 document.addEventListener('keydown', onKeyDown);
 document.addEventListener('keyup', onKeyUp);
